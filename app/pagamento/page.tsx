@@ -1,12 +1,10 @@
-"use client";
-
 import { Suspense } from "react";
-import PagamentoConteudo from "./PagamentoConteudo";
+import PagamentoContent from "./PagamentoContent";
 
-export default function PagamentoPage() {
+export default function Page() {
   return (
     <Suspense fallback={<p>A carregar...</p>}>
-      <PagamentoConteudo />
+      <PagamentoContent />
     </Suspense>
   );
 }
