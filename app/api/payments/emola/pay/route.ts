@@ -3,22 +3,20 @@ import axios from "axios";
 
 export async function POST(request: Request) {
   try {
-    const { amount, phone, reference, wallet_id, token } =
-      await request.json();
-
-    const url = `https://e2payments.explicador.co.mz/v1/c2b/emola-payment/${wallet_id}`;
+    const body = await request.json();
 
     const response = await axios.post(
-      url,
+      "https://e2payments.explicador.co.mz/v1/c2b/emola-payment/" +
+        body.wallet_id,
       {
-        client_id: process.env.E2_CLIENT_ID,
-        amount,
-        phone,
-        reference,
+        client_id: process.env.EMOLA_CLIENT_ID,
+        amount: body.amount,
+        phone: body.phone,
+        reference: body.reference,
       },
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${body.token}`,
           Accept: "application/json",
           "Content-Type": "application/json",
         },
@@ -26,9 +24,9 @@ export async function POST(request: Request) {
     );
 
     return NextResponse.json(response.data);
-  } catch (error: any) {
+  } catch (error) {
     return NextResponse.json(
-      { error: "Falha no pagamento" },
+      { error: "Erro no pagamento eMola" },
       { status: 500 }
     );
   }

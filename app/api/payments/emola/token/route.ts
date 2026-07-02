@@ -7,13 +7,13 @@ export async function POST() {
       "https://e2payments.explicador.co.mz/oauth/token",
       {
         grant_type: "client_credentials",
-        client_id: process.env.E2_CLIENT_ID,
-        client_secret: process.env.E2_CLIENT_SECRET,
+        client_id: process.env.EMOLA_CLIENT_ID,
+        client_secret: process.env.EMOLA_CLIENT_SECRET,
       }
     );
 
     return NextResponse.json(response.data);
-  } catch (error: any) {
+  } catch (error) {
     return NextResponse.json(
       { error: "Erro ao gerar token" },
       { status: 500 }
