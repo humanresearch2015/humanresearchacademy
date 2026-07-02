@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>TESTE VERCEL OK</h1>;
+  return <h1>VERCEL OK FUNCIONANDO</h1>;
 }
