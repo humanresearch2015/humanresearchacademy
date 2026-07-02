@@ -1,71 +1,79 @@
-"use client";
-
 import Link from "next/link";
 import type { CSSProperties } from "react";
 
-export default function PesquisaCientificaPage() {
+export default function CursosGratuitos() {
   return (
     <main style={container}>
-      <h1>📚 Pesquisa Científica Completa</h1>
+      <h1>🟢 Cursos Gratuitos</h1>
 
-      <p style={descricao}>
-        Curso completo de metodologia de pesquisa científica, revisão de
-        literatura, elaboração de projetos, análise de dados e redação de
-        artigos científicos.
+      <p style={texto}>
+        Cursos introdutórios gratuitos da Human Research Academy.
       </p>
 
       <div style={card}>
-        <h2>Preço</h2>
-        <p style={preco}>2.500 MT</p>
+        <h3>📊 Monitoria e Avaliação</h3>
+        <p>Aprende indicadores, avaliação e impacto.</p>
 
-        <Link
-          href="/pagamento?curso=pesquisa-cientifica&preco=2500"
-          style={botao}
-        >
-          💳 Comprar Curso
+        <Link href="/cursos-gratuitos/monitoria-avaliacao" style={btn}>
+          Aceder →
         </Link>
       </div>
 
+      <div style={card}>
+        <h3>📈 Análise de Dados</h3>
+        <p>Introdução à análise de dados.</p>
+
+        <span style={btnDisabled}>Em breve</span>
+      </div>
+
+      <div style={card}>
+        <h3>📋 KoboToolbox</h3>
+        <p>Recolha digital de dados.</p>
+
+        <span style={btnDisabled}>Em breve</span>
+      </div>
+
       <div style={{ marginTop: 30 }}>
-        <Link href="/cursos-pagos">
-          ← Voltar aos cursos pagos
-        </Link>
+        <Link href="/cursos">← Voltar</Link>
       </div>
     </main>
   );
 }
 
 const container: CSSProperties = {
-  maxWidth: "900px",
-  margin: "40px auto",
-  padding: "20px",
-  fontFamily: "Arial, sans-serif",
+  padding: 40,
+  fontFamily: "Arial",
 };
 
-const descricao: CSSProperties = {
-  lineHeight: 1.8,
-  color: "#555",
+const texto: CSSProperties = {
+  color: "#475569",
 };
 
 const card: CSSProperties = {
-  marginTop: 30,
-  padding: 25,
-  border: "1px solid #ddd",
-  borderRadius: 10,
-};
-
-const preco: CSSProperties = {
-  fontSize: 28,
-  fontWeight: "bold",
-  color: "#16a34a",
-};
-
-const botao: CSSProperties = {
-  display: "inline-block",
   marginTop: 20,
-  padding: "12px 24px",
+  padding: 20,
+  border: "1px solid #e2e8f0",
+  borderRadius: 12,
+};
+
+const btn: CSSProperties = {
+  display: "inline-block",
+  marginTop: 10,
+  padding: "10px 15px",
   background: "#16a34a",
-  color: "#fff",
+  color: "white",
   borderRadius: 8,
   textDecoration: "none",
+};
+
+const btnDisabled: CSSProperties = {
+  display: "inline-block",
+  marginTop: 10,
+  padding: "10px 15px",
+  background: "#94a3b8",
+  color: "white",
+  borderRadius: 8,
+  textDecoration: "none",
+  opacity: 0.6,
+  cursor: "not-allowed",
 };
