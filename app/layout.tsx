@@ -1,24 +1,13 @@
-import Link from "next/link";
+import "./globals.css";
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html>
-      <body>
-
-        <nav style={{ display: "flex", gap: 20, padding: 20 }}>
-          <Link href="/">Home</Link>
-          <Link href="/cursos">Cursos</Link>
-          <Link href="/cursos-gratuitos">Gratuitos</Link>
-          <Link href="/cursos-pagos">Pagos</Link>
-
-          {/* LOGIN SEMPRE AQUI */}
-          <Link href="/login" style={{ marginLeft: "auto" }}>
-            Entrar
-          </Link>
-        </nav>
-
-        {children}
-      </body>
+    <html lang="pt">
+      <body>{children}</body>
     </html>
   );
 }
