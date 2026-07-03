@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>LOGIN OK VERCEL</h1>;
+  return <h1>LOGIN FUNCIONA VERCEL</h1>;
 }
