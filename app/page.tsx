@@ -1,16 +1,8 @@
-import Link from "next/link";
-
-export default function Page() {
+export default function Home() {
   return (
-    <main style={{ padding: 40 }}>
+    <main style={{ padding: "40px" }}>
       <h1>Human Research Academy</h1>
-
-      <ul>
-        <li><Link href="/login">Login</Link></li>
-        <li><Link href="/cursos">Cursos</Link></li>
-        <li><Link href="/cursos-gratuitos">Cursos Gratuitos</Link></li>
-        <li><Link href="/cursos-pagos">Cursos Pagos</Link></li>
-      </ul>
+      <p>O site está a funcionar.</p>
     </main>
   );
 }
