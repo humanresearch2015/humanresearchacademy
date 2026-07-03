@@ -1,33 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function LoginPage() {
+export default function Page() {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [logged, setLogged] = useState(false);
 
   function handleLogin() {
-    // LOGIN SIMPLES PARA TESTE
+    // LOGIN SIMPLES (TESTE)
     if (email === "admin@hr.com" && password === "1234") {
-      setLogged(true);
       localStorage.setItem("user", email);
+      router.push("/");
     } else {
-      alert("Credenciais inválidas");
+      alert("Email ou password incorretos");
     }
   }
 
-  if (logged) {
-    return (
-      <main style={{ padding: 40 }}>
-        <h1>✅ Login feito com sucesso</h1>
-        <p>Bem-vindo à Human Research Academy</p>
-      </main>
-    );
-  }
-
   return (
-    <main style={{ padding: 40 }}>
+    <main style={container}>
       <h1>🔐 Login</h1>
 
       <input
@@ -53,13 +46,18 @@ export default function LoginPage() {
 }
 
 /* ESTILOS */
+const container = {
+  padding: 40,
+  fontFamily: "Arial",
+};
+
 const input = {
   display: "block",
   marginTop: 10,
   padding: 10,
   width: 250,
-  borderRadius: 6,
   border: "1px solid #ccc",
+  borderRadius: 6,
 };
 
 const button = {
